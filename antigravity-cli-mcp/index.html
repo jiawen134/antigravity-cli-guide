@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI MCP Setup: Config File, OAuth Tokens, and Migration Checks</title>
+    <meta name="description" content="Set up and troubleshoot Antigravity CLI MCP servers, including the config file, OAuth tokens, Gemini CLI migration differences, and quick validation steps.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-mcp/">
+    <meta property="og:title" content="Antigravity CLI MCP Setup: Config File, OAuth Tokens, and Migration Checks">
+    <meta property="og:description" content="Set up and troubleshoot Antigravity CLI MCP servers, including the config file, OAuth tokens, Gemini CLI migration differences, and quick validation steps.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-mcp/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI MCP setup","item":"https://antigravitycliguide.com/antigravity-cli-mcp/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI MCP setup","headline":"Antigravity CLI MCP setup","description":"Set up and troubleshoot Antigravity CLI MCP servers, including the config file, OAuth tokens, Gemini CLI migration differences, and quick validation steps.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://antigravitycliguide.com/antigravity-cli-mcp/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is the Antigravity MCP config file?","acceptedAnswer":{"@type":"Answer","text":"Google's MCP docs describe ~/.gemini/antigravity/mcp_config.json as the Antigravity MCP configuration file."}},{"@type":"Question","name":"Where are MCP OAuth tokens stored?","acceptedAnswer":{"@type":"Answer","text":"Google's docs describe ~/.gemini/antigravity/mcp_oauth_tokens.json for MCP OAuth token storage."}},{"@type":"Question","name":"Should I migrate all MCP servers at once?","acceptedAnswer":{"@type":"Answer","text":"No. Add one server, verify auth and visibility, then migrate the rest."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli mcp</p>
+          <h1>Antigravity CLI MCP setup</h1>
+          <p class="lede">MCP is one of the first places Gemini CLI migrations can break. Check the Antigravity-specific config path, auth provider, and token file before blaming the server.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>What this page solves</h2>
+        <p>Searchers looking for <strong>antigravity cli mcp</strong> usually do not want a definition of Model Context Protocol. They want to know why a server that worked in Gemini CLI is missing, unauthenticated, or invisible after the Antigravity CLI migration. Google's docs describe Antigravity-specific MCP configuration rather than simply reusing the old Gemini CLI settings file shape.</p>
+        <p>The safe approach is to treat MCP migration as a small integration test: locate the new config file, add one server, verify auth, restart the CLI, and only then migrate the rest of your servers.</p>
+      </section>
+      <section class="section">
+        <h2>Known official file locations</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>Location or setting</th><th>Use</th></tr></thead>
+            <tbody>
+              <tr><td>MCP config</td><td><code>~/.gemini/antigravity/mcp_config.json</code></td><td>Stores Antigravity MCP server configuration.</td></tr>
+              <tr><td>OAuth tokens</td><td><code>~/.gemini/antigravity/mcp_oauth_tokens.json</code></td><td>Stores MCP OAuth token material generated through the auth flow.</td></tr>
+              <tr><td>Google credentials auth</td><td><code>authProviderType: "google_credentials"</code></td><td>Uses Google Application Default Credentials where supported.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Do not paste secrets into a public issue or support form. If you need help, redact tokens, client secrets, workspace paths, and private server URLs.</p>
+      </section>
+      <section class="section">
+        <h2>MCP validation checklist</h2>
+        <ol>
+          <li>Open the official Antigravity MCP documentation.</li>
+          <li>Create or inspect <code>mcp_config.json</code>.</li>
+          <li>Add one MCP server first, not the whole old config.</li>
+          <li>Confirm the auth provider and OAuth flow.</li>
+          <li>Restart Antigravity CLI and open the MCP command or tool list.</li>
+          <li>Run a harmless read-only tool call before giving file or network permissions.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>Common migration mistake</h2>
+        <p>The common mistake is copying an old Gemini CLI settings block into the wrong place. Antigravity and Antigravity CLI separate MCP configuration into their own file. If the server does not appear, check location, JSON validity, required environment variables, and auth provider before reinstalling the CLI.</p>
+      </section>
+      <section class="section">
+        <h2>What to record before asking for help</h2>
+        <p>A useful MCP support report should include the server name, whether it is local or remote, the auth provider type, the config file path you edited, whether the JSON validates, and whether the same server worked in Gemini CLI before migration. It should not include token values, private client secrets, or full internal URLs. If the issue only appears after migration, mention whether you used the official migration flow or copied settings by hand.</p>
+        <p>This information matters because MCP failures can look identical from the prompt: "tool not found", "server failed", or "auth required" may come from three different causes. A clean report lets you separate path problems, OAuth problems, and server runtime problems quickly.</p>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Where is the Antigravity MCP config file?</summary><p>Google's MCP docs describe ~/.gemini/antigravity/mcp_config.json as the Antigravity MCP configuration file.</p></details><details><summary>Where are MCP OAuth tokens stored?</summary><p>Google's docs describe ~/.gemini/antigravity/mcp_oauth_tokens.json for MCP OAuth token storage.</p></details><details><summary>Should I migrate all MCP servers at once?</summary><p>No. Add one server, verify auth and visibility, then migrate the rest.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-vs-gemini-cli/">Antigravity CLI vs Gemini CLI</a><a href="/antigravity-cli-config/">Antigravity CLI config</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

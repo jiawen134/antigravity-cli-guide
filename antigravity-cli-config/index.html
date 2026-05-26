@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Config: Settings File, Keybindings, Permissions, and Safe Defaults</title>
+    <meta name="description" content="Find Antigravity CLI config locations, keybindings, permission controls, and safe first-day settings for migrated Gemini CLI users.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-config/">
+    <meta property="og:title" content="Antigravity CLI Config: Settings File, Keybindings, Permissions, and Safe Defaults">
+    <meta property="og:description" content="Find Antigravity CLI config locations, keybindings, permission controls, and safe first-day settings for migrated Gemini CLI users.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-config/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI config","item":"https://antigravitycliguide.com/antigravity-cli-config/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI config","headline":"Antigravity CLI config","description":"Find Antigravity CLI config locations, keybindings, permission controls, and safe first-day settings for migrated Gemini CLI users.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://antigravitycliguide.com/antigravity-cli-config/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where is the Antigravity CLI settings file?","acceptedAnswer":{"@type":"Answer","text":"The official usage docs describe ~/.gemini/antigravity-cli/settings.json."}},{"@type":"Question","name":"Where are Antigravity CLI keybindings stored?","acceptedAnswer":{"@type":"Answer","text":"The official usage docs describe ~/.gemini/antigravity-cli/keybindings.json."}},{"@type":"Question","name":"Should I edit config before using the CLI?","acceptedAnswer":{"@type":"Answer","text":"Inspect config first, but keep conservative permissions until you have tested the CLI in a safe repository."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli config</p>
+          <h1>Antigravity CLI config</h1>
+          <p class="lede">Before you change autonomy or copy old Gemini CLI settings, find the Antigravity CLI config files and review the defaults in a safe test workspace.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Config locations to check</h2>
+        <p>Configuration searches usually come from users who installed the CLI, opened it once, and then could not find where behavior is controlled. The official CLI usage docs describe a JSON settings file and a separate keybindings file. Treat those files as user-level configuration, then keep project-specific instructions in repository context files such as <code>AGENTS.md</code> or <code>GEMINI.md</code> when your workflow needs them.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Config item</th><th>Official path or command</th><th>Why it matters</th></tr></thead>
+            <tbody>
+              <tr><td>Settings file</td><td><code>~/.gemini/antigravity-cli/settings.json</code></td><td>Stores CLI behavior and user preferences.</td></tr>
+              <tr><td>Keybindings file</td><td><code>~/.gemini/antigravity-cli/keybindings.json</code></td><td>Stores keyboard shortcuts for terminal workflows.</td></tr>
+              <tr><td>Runtime config</td><td><code>/config</code> or <code>/settings</code></td><td>Lets you inspect and change settings inside the CLI.</td></tr>
+              <tr><td>Permissions</td><td><code>/permissions</code></td><td>Controls how much the agent can do without review.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Safe first-day defaults</h2>
+        <ol>
+          <li>Keep review prompts enabled while you learn command behavior.</li>
+          <li>Do not copy broad shell permissions from an old setup without reading them.</li>
+          <li>Use a test repository before granting file-write or command-run authority.</li>
+          <li>Change keybindings only after confirming the help screen and command list.</li>
+          <li>Back up settings before editing JSON by hand.</li>
+        </ol>
+        <p>For new-keyword site users, this page is useful because it answers the moment after installation: "Where did the CLI put my settings, and what can I safely change?"</p>
+      </section>
+      <section class="section">
+        <h2>What belongs in config vs project context</h2>
+        <p>Put user preferences, keyboard shortcuts, and permission defaults in CLI config. Put repository-specific instructions, coding standards, test commands, and agent guidance in project context files. That separation helps you avoid leaking one project's rules into every future CLI session.</p>
+      </section>
+      <section class="section">
+        <h2>Config change checklist</h2>
+        <p>Before editing settings by hand, open the CLI's built-in config surface and write down the current behavior you are trying to change. Then make one change at a time, restart the CLI, and test in a disposable folder. If you change permissions, run a task that only reads files before allowing writes or shell commands. If you change keybindings, keep the help command available so you can recover when a shortcut conflicts with your terminal.</p>
+        <p>For migrated Gemini CLI users, avoid copying old settings wholesale. Some concepts carry over, but file paths, extension/plugin names, and MCP configuration are not always identical. A measured config process protects the site visitor from the most common launch-week mistake: turning a migration into a mystery because too many files changed at once.</p>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Where is the Antigravity CLI settings file?</summary><p>The official usage docs describe ~/.gemini/antigravity-cli/settings.json.</p></details><details><summary>Where are Antigravity CLI keybindings stored?</summary><p>The official usage docs describe ~/.gemini/antigravity-cli/keybindings.json.</p></details><details><summary>Should I edit config before using the CLI?</summary><p>Inspect config first, but keep conservative permissions until you have tested the CLI in a safe repository.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-cli-yolo-mode/">Antigravity CLI yolo mode</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

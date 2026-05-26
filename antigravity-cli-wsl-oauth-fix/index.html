@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI WSL OAuth Fix: Browser Auth, Remote URLs, and Token Checks</title>
+    <meta name="description" content="Fix Antigravity CLI auth in WSL, SSH, and headless terminals by checking browser authorization URLs, account selection, token storage, and shell setup.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-wsl-oauth-fix/">
+    <meta property="og:title" content="Antigravity CLI WSL OAuth Fix: Browser Auth, Remote URLs, and Token Checks">
+    <meta property="og:description" content="Fix Antigravity CLI auth in WSL, SSH, and headless terminals by checking browser authorization URLs, account selection, token storage, and shell setup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-wsl-oauth-fix/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI WSL OAuth fix","item":"https://antigravitycliguide.com/antigravity-cli-wsl-oauth-fix/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI WSL OAuth fix","headline":"Antigravity CLI WSL OAuth fix","description":"Fix Antigravity CLI auth in WSL, SSH, and headless terminals by checking browser authorization URLs, account selection, token storage, and shell setup.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://antigravitycliguide.com/antigravity-cli-wsl-oauth-fix/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does Antigravity CLI auth fail in WSL?","acceptedAnswer":{"@type":"Answer","text":"WSL often needs a browser authorization URL or code flow because it cannot always open the desktop browser directly."}},{"@type":"Question","name":"Should I paste my Google password into the terminal?","acceptedAnswer":{"@type":"Answer","text":"No. Use the official browser authorization flow only."}},{"@type":"Question","name":"Is WSL auth the same as MCP OAuth?","acceptedAnswer":{"@type":"Answer","text":"Not always. MCP servers can have separate OAuth token storage and auth provider settings."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli wsl oauth fix</p>
+          <h1>Antigravity CLI WSL OAuth fix</h1>
+          <p class="lede">When auth fails in WSL or SSH, the problem is often the browser handoff, account selection, or token storage, not the install command itself.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Why WSL auth fails</h2>
+        <p>WSL, SSH, containers, and headless servers often cannot open the same browser session as a local desktop terminal. The CLI may print an authorization URL or code flow instead of opening a browser automatically. If you miss that URL, choose the wrong Google account, or run the flow in the wrong environment, the CLI can look "logged out" even after installation succeeded.</p>
+        <p>Do not type your Google password into the terminal or a third-party page. Use the official browser authorization flow shown by the CLI and verify the domain before approving access.</p>
+      </section>
+      <section class="section">
+        <h2>Step-by-step fix</h2>
+        <ol>
+          <li>Confirm the CLI starts locally or in WSL and prints an auth instruction.</li>
+          <li>Copy the authorization URL into your normal browser if auto-open fails.</li>
+          <li>Choose the Google account that has Antigravity access.</li>
+          <li>Return to the terminal and complete any code or callback step.</li>
+          <li>Restart the CLI in the same WSL distribution or SSH account.</li>
+          <li>Run a read-only prompt in an empty folder to confirm the session works.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>If auth still does not stick</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Check</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Same Linux user</td><td>Tokens can be stored under the user account that completed the flow.</td></tr>
+              <tr><td>Correct WSL distro</td><td>Ubuntu, Debian, and other distros have separate homes and config files.</td></tr>
+              <tr><td>Clock/time sync</td><td>OAuth flows can fail when system time is very wrong.</td></tr>
+              <tr><td>Corporate browser policy</td><td>Enterprise accounts can block or restrict app authorization.</td></tr>
+              <tr><td>MCP OAuth separately</td><td>MCP servers can have their own OAuth token file and auth provider.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>How to avoid repeating the same auth loop</h2>
+        <p>When the CLI keeps asking you to sign in, stop and capture the environment instead of approving the same browser prompt again and again. Note whether you are in native Windows, WSL, SSH, a dev container, or a remote VM. Then note which browser handled the OAuth approval and which Linux user ran the CLI. In WSL, two terminals can look similar while using different distributions or home directories.</p>
+        <p>If the account works in one environment but not another, the likely problem is local token storage or browser handoff. If the account fails everywhere, the likely problem is entitlement, plan access, or an organization policy. This distinction helps you decide whether to fix the shell, inspect tokens, or check official account settings before reinstalling the CLI.</p>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Why does Antigravity CLI auth fail in WSL?</summary><p>WSL often needs a browser authorization URL or code flow because it cannot always open the desktop browser directly.</p></details><details><summary>Should I paste my Google password into the terminal?</summary><p>No. Use the official browser authorization flow only.</p></details><details><summary>Is WSL auth the same as MCP OAuth?</summary><p>Not always. MCP servers can have separate OAuth token storage and auth provider settings.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/antigravity-cli-install/">Antigravity CLI install</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-rate-limit/">Antigravity CLI rate limit</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

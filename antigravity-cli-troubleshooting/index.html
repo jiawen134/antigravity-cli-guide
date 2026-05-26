@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Troubleshooting: Auth, WSL, MCP, Skills, and Permissions</title>
+    <meta name="description" content="Troubleshoot common Antigravity CLI setup and migration issues, including browser auth, remote sessions, MCP configuration, skills, permissions, and command confusion.">
+    <link rel="canonical" href="https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-troubleshooting/">
+    <meta property="og:title" content="Antigravity CLI Troubleshooting: Auth, WSL, MCP, Skills, and Permissions">
+    <meta property="og:description" content="Troubleshoot common Antigravity CLI setup and migration issues, including browser auth, remote sessions, MCP configuration, skills, permissions, and command confusion.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-troubleshooting/">
+    <meta property="og:image" content="https://jiawen134.github.io/antigravity-cli-guide/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/antigravity-cli-guide/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://jiawen134.github.io/antigravity-cli-guide/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI troubleshooting","item":"https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-troubleshooting/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI troubleshooting","headline":"Antigravity CLI troubleshooting","description":"Troubleshoot common Antigravity CLI setup and migration issues, including browser auth, remote sessions, MCP configuration, skills, permissions, and command confusion.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-troubleshooting/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does Antigravity CLI auth behave differently over SSH?","acceptedAnswer":{"@type":"Answer","text":"Remote sessions often use an authorization URL and code flow instead of opening the browser directly."}},{"@type":"Question","name":"Why did my Gemini CLI skills not appear?","acceptedAnswer":{"@type":"Answer","text":"Migration can involve different skill paths and management behavior. Check the official migration docs."}},{"@type":"Question","name":"Should troubleshooting pages be published on day one?","acceptedAnswer":{"@type":"Answer","text":"Yes, if each page answers a distinct problem and links back to the main guide."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/antigravity-cli-guide/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-guide/antigravity-cli-install/">Install</a>
+          <a href="/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli troubleshooting</p>
+          <h1>Antigravity CLI troubleshooting</h1>
+          <p class="lede">When Antigravity CLI feels broken, check auth, shell type, permissions, migration files, MCP config, and workspace context before reinstalling.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Fast diagnosis table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Symptom</th><th>Likely cause</th><th>First check</th></tr></thead>
+            <tbody>
+              <tr><td>Auth opens wrong browser or fails remotely</td><td>Remote or SSH session flow differs from local sign-in.</td><td>Use the printed authorization URL/code flow instead of entering credentials in the terminal.</td></tr>
+              <tr><td>Command not found after install</td><td>PATH not refreshed or wrong shell command used.</td><td>Restart terminal and verify the install command matched your shell.</td></tr>
+              <tr><td>Skills missing after migration</td><td>Workspace-specific skill paths changed.</td><td>Check global skills and project <code>.agents/skills</code>.</td></tr>
+              <tr><td>MCP server not loading</td><td>Config file path or remote field naming changed.</td><td>Open the migration docs and compare expected MCP config.</td></tr>
+              <tr><td>Agent wants too many approvals</td><td>Permissions are conservative.</td><td>Open <code>/permissions</code>, but only loosen settings in a safe branch.</td></tr>
+              <tr><td>Agent does too much</td><td>Autonomy or sandbox settings are too broad.</td><td>Re-enable review, use Git diff, and reduce permissions.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Do not reinstall first</h2>
+        <p>Reinstalling is tempting, but many CLI problems are configuration or migration issues. Check the official docs, confirm your shell, inspect settings, and test in a clean folder. If you migrated from Gemini CLI, compare skill and MCP locations before assuming the new CLI ignored your setup.</p>
+      </section>
+      <section class="section">
+        <h2>When to ask the community</h2>
+        <p>Ask for help after you can share the operating system, shell, install command type, whether the session is local or remote, what command failed, and whether the issue happens in a brand-new empty folder. This keeps community threads useful and makes the problem easier to reproduce.</p>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Why does Antigravity CLI auth behave differently over SSH?</summary><p>Remote sessions often use an authorization URL and code flow instead of opening the browser directly.</p></details><details><summary>Why did my Gemini CLI skills not appear?</summary><p>Migration can involve different skill paths and management behavior. Check the official migration docs.</p></details><details><summary>Should troubleshooting pages be published on day one?</summary><p>Yes, if each page answers a distinct problem and links back to the main guide.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/antigravity-cli-guide/">Antigravity CLI guide</a><a href="/antigravity-cli-guide/antigravity-cli-install/">Antigravity CLI install</a><a href="/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-guide/antigravity-cli-yolo-mode/">Antigravity CLI yolo mode</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/antigravity-cli-guide/about/">About</a><br>
+          <a href="/antigravity-cli-guide/privacy/">Privacy</a><br>
+          <a href="/antigravity-cli-guide/contact/">Contact</a><br>
+          <a href="/antigravity-cli-guide/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/antigravity-cli-guide/assets/site.js" defer></script>
+  </body>
+</html>

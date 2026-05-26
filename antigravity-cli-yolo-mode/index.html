@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Yolo Mode: Permissions, Risk, and Safer Alternatives</title>
+    <meta name="description" content="What people mean by Antigravity CLI yolo mode, how official permission controls relate to it, and how to test autonomous commands safely.">
+    <link rel="canonical" href="https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-yolo-mode/">
+    <meta property="og:title" content="Antigravity CLI Yolo Mode: Permissions, Risk, and Safer Alternatives">
+    <meta property="og:description" content="What people mean by Antigravity CLI yolo mode, how official permission controls relate to it, and how to test autonomous commands safely.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-yolo-mode/">
+    <meta property="og:image" content="https://jiawen134.github.io/antigravity-cli-guide/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/antigravity-cli-guide/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://jiawen134.github.io/antigravity-cli-guide/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI yolo mode","item":"https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-yolo-mode/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI yolo mode","headline":"Antigravity CLI yolo mode","description":"What people mean by Antigravity CLI yolo mode, how official permission controls relate to it, and how to test autonomous commands safely.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://jiawen134.github.io/antigravity-cli-guide/antigravity-cli-yolo-mode/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is yolo mode official?","acceptedAnswer":{"@type":"Answer","text":"People search for the phrase, but the safer way to think about it is permission and review configuration."}},{"@type":"Question","name":"Should I use yolo mode in a production repo?","acceptedAnswer":{"@type":"Answer","text":"Not by default. Test in an isolated branch or throwaway workspace first."}},{"@type":"Question","name":"What should a yolo mode page provide?","acceptedAnswer":{"@type":"Answer","text":"Clear risk language, official permission references, and a safe test checklist."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/antigravity-cli-guide/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-guide/antigravity-cli-install/">Install</a>
+          <a href="/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli yolo mode</p>
+          <h1>Antigravity CLI yolo mode</h1>
+          <p class="lede">Searchers use yolo mode to mean low-friction agent approvals. Treat it as a permissions question, not a magic speed toggle.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>What yolo mode usually means</h2>
+        <p>The phrase <strong>antigravity cli yolo mode</strong> is a search term, not the safest way to describe production usage. In practice, users are asking how to reduce repeated confirmations and let the CLI proceed faster. The official docs point to permission controls, configuration, sandbox behavior, and launch overrides rather than a single universal button that should be used everywhere.</p>
+        <p>For a local experiment, less friction can be convenient. For a repository with credentials, deployment scripts, or customer data, it can be dangerous. The right page for this keyword should explain the tradeoff clearly and give safer testing patterns.</p>
+      </section>
+      <section class="section">
+        <h2>Safer testing pattern</h2>
+        <ol>
+          <li>Create a throwaway branch or copy of the project.</li>
+          <li>Start with read-only or request-review permissions.</li>
+          <li>Let the CLI propose a plan before file writes.</li>
+          <li>Increase autonomy only after you understand the command category.</li>
+          <li>Use Git diff, tests, and manual review before merging.</li>
+        </ol>
+        <p>If a command requests broad file writes, shell execution, or network access, slow down. Yolo-style operation is most useful when the workspace is isolated and the action is easy to reverse.</p>
+      </section>
+      <section class="section">
+        <h2>Permissions to review</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Control</th><th>Why it matters</th></tr></thead>
+            <tbody>
+              <tr><td><code>/permissions</code></td><td>Controls the agent autonomy level and review behavior.</td></tr>
+              <tr><td><code>/config</code></td><td>Opens broader CLI settings, including safety and output preferences.</td></tr>
+              <tr><td>Sandbox settings</td><td>Decide whether risky commands run in a constrained environment.</td></tr>
+              <tr><td>Git workflow</td><td>Gives you a rollback path when the agent changes files.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Is yolo mode official?</summary><p>People search for the phrase, but the safer way to think about it is permission and review configuration.</p></details><details><summary>Should I use yolo mode in a production repo?</summary><p>Not by default. Test in an isolated branch or throwaway workspace first.</p></details><details><summary>What should a yolo mode page provide?</summary><p>Clear risk language, official permission references, and a safe test checklist.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/antigravity-cli-guide/">Antigravity CLI guide</a><a href="/antigravity-cli-guide/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-cli-guide/antigravity-cli-install/">Antigravity CLI install</a><a href="/antigravity-cli-guide/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/antigravity-cli-guide/about/">About</a><br>
+          <a href="/antigravity-cli-guide/privacy/">Privacy</a><br>
+          <a href="/antigravity-cli-guide/contact/">Contact</a><br>
+          <a href="/antigravity-cli-guide/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/antigravity-cli-guide/assets/site.js" defer></script>
+  </body>
+</html>

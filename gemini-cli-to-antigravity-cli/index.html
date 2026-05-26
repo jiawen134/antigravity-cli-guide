@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gemini CLI to Antigravity CLI Migration: What to Move and What to Check</title>
+    <meta name="description" content="A practical Gemini CLI to Antigravity CLI migration checklist for skills, settings, MCP servers, context files, and the June 18, 2026 consumer transition.">
+    <link rel="canonical" href="https://jiawen134.github.io/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">
+    <meta property="og:title" content="Gemini CLI to Antigravity CLI Migration: What to Move and What to Check">
+    <meta property="og:description" content="A practical Gemini CLI to Antigravity CLI migration checklist for skills, settings, MCP servers, context files, and the June 18, 2026 consumer transition.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jiawen134.github.io/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">
+    <meta property="og:image" content="https://jiawen134.github.io/antigravity-cli-guide/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/antigravity-cli-guide/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://jiawen134.github.io/antigravity-cli-guide/"},{"@type":"ListItem","position":2,"name":"Gemini CLI to Antigravity CLI migration","item":"https://jiawen134.github.io/antigravity-cli-guide/gemini-cli-to-antigravity-cli/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Gemini CLI to Antigravity CLI migration","headline":"Gemini CLI to Antigravity CLI migration","description":"A practical Gemini CLI to Antigravity CLI migration checklist for skills, settings, MCP servers, context files, and the June 18, 2026 consumer transition.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://jiawen134.github.io/antigravity-cli-guide/gemini-cli-to-antigravity-cli/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there a June 18, 2026 deadline?","acceptedAnswer":{"@type":"Answer","text":"Google's transition post names June 18, 2026 for individual and free consumer usage changes. Enterprise cases have separate handling."}},{"@type":"Question","name":"Do Gemini CLI skills still matter?","acceptedAnswer":{"@type":"Answer","text":"Yes. The migration docs indicate skills and related customizations are part of the migration surface, but locations and management can differ."}},{"@type":"Question","name":"Is migration checklist the main keyword?","acceptedAnswer":{"@type":"Answer","text":"No. It is a support page under the broader antigravity cli cluster."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/antigravity-cli-guide/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-guide/antigravity-cli-install/">Install</a>
+          <a href="/antigravity-cli-guide/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-yolo-mode/">Yolo Mode</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-commands/">Commands</a>
+          <a href="/antigravity-cli-guide/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: gemini cli to antigravity cli</p>
+          <h1>Gemini CLI to Antigravity CLI migration</h1>
+          <p class="lede">Move carefully: the real task is not only installing the new CLI, but checking skills, settings, MCP servers, hooks, and context files before Gemini CLI access changes.</p>
+          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Why migration matters now</h2>
+        <p>Google announced on May 19, 2026 that Gemini CLI and Gemini Code Assist IDE extensions will stop serving requests for Google AI Pro and Ultra, and for free individual Gemini Code Assist users, on June 18, 2026. That date is the reason migration searches are rising. Enterprise and paid API-key scenarios have separate rules, so do not assume every organization must move the same way.</p>
+        <p>The practical migration job is to avoid losing the workflows you built around Gemini CLI: skills, commands, MCP servers, context files, keybindings, and permission expectations.</p>
+      </section>
+      <section class="section">
+        <h2>Migration checklist</h2>
+        <ol>
+          <li>Install Antigravity CLI from the official Google source.</li>
+          <li>Open the official migration guide and run the supported import or onboarding flow where available.</li>
+          <li>Check global and workspace skills. Workspace-specific skills may need to move into <code>.agents/skills</code>.</li>
+          <li>Review MCP server configuration. Antigravity CLI uses its own MCP configuration path and remote-server fields can differ.</li>
+          <li>Keep <code>GEMINI.md</code> and <code>AGENTS.md</code> context files visible in the active workspace.</li>
+          <li>Run a safe prompt that reads files but does not write. Then run a controlled edit in a disposable branch.</li>
+          <li>Document any Gemini CLI behavior that does not have feature parity yet.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>What not to migrate blindly</h2>
+        <p>Do not copy stale permission shortcuts into a new agent environment without reviewing them. Do not assume every command maps 1:1. Do not delete old settings until the new CLI can handle your daily tasks. If you use enterprise credentials, check the Google transition post and your organization's policy before changing production workflows.</p>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Is there a June 18, 2026 deadline?</summary><p>Google's transition post names June 18, 2026 for individual and free consumer usage changes. Enterprise cases have separate handling.</p></details><details><summary>Do Gemini CLI skills still matter?</summary><p>Yes. The migration docs indicate skills and related customizations are part of the migration surface, but locations and management can differ.</p></details><details><summary>Is migration checklist the main keyword?</summary><p>No. It is a support page under the broader antigravity cli cluster.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/antigravity-cli-guide/">Antigravity CLI guide</a><a href="/antigravity-cli-guide/antigravity-cli-install/">Antigravity CLI install</a><a href="/antigravity-cli-guide/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-cli-guide/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/antigravity-cli-guide/about/">About</a><br>
+          <a href="/antigravity-cli-guide/privacy/">Privacy</a><br>
+          <a href="/antigravity-cli-guide/contact/">Contact</a><br>
+          <a href="/antigravity-cli-guide/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/antigravity-cli-guide/assets/site.js" defer></script>
+  </body>
+</html>

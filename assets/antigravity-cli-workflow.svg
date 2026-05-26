@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Antigravity CLI workflow map</title>
+  <desc id="desc">A terminal-style workflow showing install, migrate, configure, run agents, and troubleshoot steps.</desc>
+  <rect width="1200" height="720" fill="#f6f7f9"/>
+  <rect x="72" y="58" width="1056" height="604" rx="8" fill="#101318"/>
+  <rect x="72" y="58" width="1056" height="50" rx="8" fill="#222833"/>
+  <circle cx="106" cy="83" r="7" fill="#f06449"/>
+  <circle cx="130" cy="83" r="7" fill="#f6c85f"/>
+  <circle cx="154" cy="83" r="7" fill="#63c174"/>
+  <text x="184" y="89" fill="#dfe7f3" font-family="Menlo, Consolas, monospace" font-size="18">antigravity-cli-guide</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="24">
+    <text x="114" y="168" fill="#8bd3ff">$ agy</text>
+    <text x="114" y="214" fill="#eef4ff">Start from the terminal, then keep the official docs open.</text>
+    <text x="114" y="274" fill="#92f0b7">1. Install</text>
+    <text x="360" y="274" fill="#f6d177">2. Migrate</text>
+    <text x="612" y="274" fill="#f2a7ff">3. Configure</text>
+    <text x="876" y="274" fill="#88d8d0">4. Run agents</text>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="18">
+    <rect x="112" y="324" width="220" height="120" rx="8" fill="#1d2630" stroke="#3a4656"/>
+    <text x="136" y="362" fill="#eef4ff">Install command</text>
+    <text x="136" y="394" fill="#aeb9c7">macOS, Linux,</text>
+    <text x="136" y="420" fill="#aeb9c7">PowerShell, CMD</text>
+    <rect x="362" y="324" width="220" height="120" rx="8" fill="#1d2630" stroke="#3a4656"/>
+    <text x="386" y="362" fill="#eef4ff">Gemini CLI move</text>
+    <text x="386" y="394" fill="#aeb9c7">skills, settings,</text>
+    <text x="386" y="420" fill="#aeb9c7">MCP, context files</text>
+    <rect x="612" y="324" width="220" height="120" rx="8" fill="#1d2630" stroke="#3a4656"/>
+    <text x="636" y="362" fill="#eef4ff">Permissions</text>
+    <text x="636" y="394" fill="#aeb9c7">sandbox, review,</text>
+    <text x="636" y="420" fill="#aeb9c7">yolo-style searches</text>
+    <rect x="862" y="324" width="220" height="120" rx="8" fill="#1d2630" stroke="#3a4656"/>
+    <text x="886" y="362" fill="#eef4ff">Subagents</text>
+    <text x="886" y="394" fill="#aeb9c7">tasks, slash</text>
+    <text x="886" y="420" fill="#aeb9c7">commands, plugins</text>
+  </g>
+  <path d="M332 384H362" stroke="#7d8998" stroke-width="4"/>
+  <path d="M582 384H612" stroke="#7d8998" stroke-width="4"/>
+  <path d="M832 384H862" stroke="#7d8998" stroke-width="4"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="20">
+    <text x="114" y="520" fill="#8bd3ff">? check auth, WSL, plugins, MCP, and permissions before blaming the model</text>
+    <text x="114" y="574" fill="#92f0b7">Updated: 2026-05-26</text>
+  </g>
+</svg>

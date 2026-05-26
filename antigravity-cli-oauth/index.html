@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI OAuth: Sign-In, WSL, and MCP Auth</title>
+    <meta name="description" content="Troubleshoot Antigravity CLI OAuth sign-in issues across local terminals, WSL, SSH, account selection, and MCP server authentication.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-oauth/">
+    <meta property="og:title" content="Antigravity CLI OAuth: Sign-In, WSL, and MCP Auth">
+    <meta property="og:description" content="Troubleshoot Antigravity CLI OAuth sign-in issues across local terminals, WSL, SSH, account selection, and MCP server authentication.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-oauth/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4ECJP5M2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y4ECJP5M2M');
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI OAuth sign-in","item":"https://antigravitycliguide.com/antigravity-cli-oauth/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI OAuth sign-in","headline":"Antigravity CLI OAuth sign-in","description":"Troubleshoot Antigravity CLI OAuth sign-in issues across local terminals, WSL, SSH, account selection, and MCP server authentication.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/antigravity-cli-oauth/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is OAuth the same as rate limiting?","acceptedAnswer":{"@type":"Answer","text":"No. A stale token or wrong account can look like access failure, but it is not the same as a true quota limit."}},{"@type":"Question","name":"Why does WSL make OAuth harder?","acceptedAnswer":{"@type":"Answer","text":"The browser and the Linux environment may not share the same token storage or callback behavior."}},{"@type":"Question","name":"Does MCP use separate OAuth?","acceptedAnswer":{"@type":"Answer","text":"It can. Google's MCP docs describe OAuth-related MCP configuration and token storage."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli oauth</p>
+          <h1>Antigravity CLI OAuth sign-in</h1>
+          <p class="lede">OAuth problems can come from the browser handoff, the selected Google account, token storage, WSL, or an MCP server's own auth flow.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Separate the auth layers</h2>
+        <p><strong>Antigravity CLI OAuth</strong> is broader than a WSL fix. The main CLI sign-in flow, a remote terminal browser handoff, and an MCP server OAuth flow can each fail for different reasons. If you treat all of them as the same problem, you can spend an hour repeating the wrong login step.</p>
+        <p>Start by identifying what is asking for authorization: the CLI itself, a Google account entitlement, or an MCP server. Then confirm which environment stores the resulting token.</p>
+      </section>
+      <section class="section">
+        <h2>OAuth diagnosis table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Symptom</th><th>Likely layer</th><th>First check</th></tr></thead>
+            <tbody>
+              <tr><td>Browser does not open</td><td>Terminal handoff</td><td>Copy the printed authorization URL into your browser.</td></tr>
+              <tr><td>Wrong account keeps signing in</td><td>Google account selection</td><td>Use the account with Antigravity access and sign out of extras if needed.</td></tr>
+              <tr><td>Works locally but not in WSL</td><td>Token storage or distro mismatch</td><td>Check which user and WSL distribution ran the CLI.</td></tr>
+              <tr><td>MCP server asks for auth</td><td>MCP-specific OAuth</td><td>Inspect MCP config and token paths separately from CLI sign-in.</td></tr>
+              <tr><td>Looks like a quota problem</td><td>Account access or stale token</td><td>Confirm auth before assuming rate limits.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Safe sign-in rules</h2>
+        <ol>
+          <li>Verify the domain before approving access.</li>
+          <li>Never paste a Google password into the terminal or a third-party page.</li>
+          <li>Do not share token files in support threads.</li>
+          <li>Use one account while debugging, then test additional accounts later.</li>
+          <li>If MCP auth fails, debug one server at a time.</li>
+        </ol>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Is OAuth the same as rate limiting?</summary><p>No. A stale token or wrong account can look like access failure, but it is not the same as a true quota limit.</p></details><details><summary>Why does WSL make OAuth harder?</summary><p>The browser and the Linux environment may not share the same token storage or callback behavior.</p></details><details><summary>Does MCP use separate OAuth?</summary><p>It can. Google's MCP docs describe OAuth-related MCP configuration and token storage.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/antigravity-cli-wsl-oauth-fix/">Antigravity CLI WSL OAuth fix</a><a href="/antigravity-cli-remote-ssh/">Antigravity CLI remote SSH guide</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-rate-limit/">Antigravity CLI rate limit</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

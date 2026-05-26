@@ -22,7 +22,7 @@
     </script>
     <link rel="stylesheet" href="/assets/styles.css">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI guide","item":"https://antigravitycliguide.com/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Antigravity CLI guide","headline":"Antigravity CLI guide","description":"A practical Antigravity CLI guide with install commands, Gemini CLI migration notes, command references, yolo mode context, and troubleshooting steps.","datePublished":"2026-05-26","dateModified":"2026-05-26","url":"https://antigravitycliguide.com/","inLanguage":"en","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Windows, Linux","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Antigravity CLI guide","headline":"Antigravity CLI guide","description":"A practical Antigravity CLI guide with install commands, Gemini CLI migration notes, command references, yolo mode context, and troubleshooting steps.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/","inLanguage":"en","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Windows, Linux","isAccessibleForFree":true}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Antigravity CLI the same as Gemini CLI?","acceptedAnswer":{"@type":"Answer","text":"No. Google says Gemini CLI is transitioning for individual and free users, while Antigravity CLI is the new terminal surface inside the Antigravity platform. Enterprise access has separate rules."}},{"@type":"Question","name":"Should I download Antigravity CLI from this site?","acceptedAnswer":{"@type":"Answer","text":"No. Use the official Google Antigravity download page. This site only explains the commands, migration steps, and common decisions."}},{"@type":"Question","name":"What is the fastest useful page to build around this keyword?","acceptedAnswer":{"@type":"Answer","text":"A guide hub with install commands, migration notes, yolo mode safety context, command references, and troubleshooting pages."}}]}</script>
   </head>
   <body>
@@ -33,9 +33,9 @@
         <div class="nav-links">
           <a href="/antigravity-cli-install/">Install</a>
           <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
           <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
-          <a href="/antigravity-cli-yolo-mode/">Yolo Mode</a>
-          <a href="/antigravity-cli-commands/">Commands</a>
           <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
         </div>
       </nav>
@@ -48,7 +48,7 @@
           <p class="eyebrow">Main keyword: antigravity cli</p>
           <h1>Antigravity CLI guide</h1>
           <p class="lede">Install Antigravity CLI safely, understand the Gemini CLI transition, and find the right page for commands, yolo-style permission searches, Antigravity 2.0 differences, and troubleshooting.</p>
-          <p class="small">Updated on 2026-05-26. Independent guide. Use official Google links for downloads and account actions.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
           <div class="hero-actions">
             <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
             <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
@@ -105,6 +105,11 @@
           <article class="card"><span class="pill">MCP</span><h3>MCP server setup</h3><p>Find the new MCP config location, OAuth token behavior, and migration checks before assuming your Gemini CLI servers broke.</p><a href="/antigravity-cli-mcp/">Open MCP guide</a></article>
           <article class="card"><span class="pill">Fix</span><h3>WSL and OAuth</h3><p>Remote, WSL, and headless sessions often fail because auth opens in the wrong place. Start with the authorization flow.</p><a href="/antigravity-cli-wsl-oauth-fix/">Fix WSL auth</a></article>
           <article class="card"><span class="pill">Usage</span><h3>Rate limits</h3><p>Separate account access, plan limits, model limits, and CLI session issues before reinstalling or changing plans.</p><a href="/antigravity-cli-rate-limit/">Check rate limits</a></article>
+          <article class="card"><span class="pill">PATH</span><h3>Command not found</h3><p>Diagnose shell, PATH, terminal restart, and Windows command issues before reinstalling the CLI.</p><a href="/antigravity-cli-not-found/">Fix command not found</a></article>
+          <article class="card"><span class="pill">Update</span><h3>Update or reinstall safely</h3><p>Check the official installer, preserve config, and verify the CLI after an update without deleting useful migration state.</p><a href="/antigravity-cli-update/">Open update guide</a></article>
+          <article class="card"><span class="pill">Access</span><h3>OAuth and sign-in</h3><p>Separate account selection, browser handoff, tokens, WSL, and MCP OAuth so users know which auth flow is failing.</p><a href="/antigravity-cli-oauth/">Fix OAuth sign-in</a></article>
+          <article class="card"><span class="pill">Remote</span><h3>Remote SSH setup</h3><p>Use the CLI over SSH or in a remote terminal without mixing up local browser auth, project paths, and permissions.</p><a href="/antigravity-cli-remote-ssh/">Open SSH guide</a></article>
+          <article class="card"><span class="pill">Migrate</span><h3>Skills and plugins</h3><p>Move Gemini CLI skills, extensions, hooks, and plugin expectations into the Antigravity CLI model carefully.</p><a href="/antigravity-cli-skills/">Open skills guide</a></article>
         </div>
       </section>
       <section class="section">
@@ -135,7 +140,7 @@
       </section>
     
       <section class="section faq"><h2>FAQ</h2><details><summary>Is Antigravity CLI the same as Gemini CLI?</summary><p>No. Google says Gemini CLI is transitioning for individual and free users, while Antigravity CLI is the new terminal surface inside the Antigravity platform. Enterprise access has separate rules.</p></details><details><summary>Should I download Antigravity CLI from this site?</summary><p>No. Use the official Google Antigravity download page. This site only explains the commands, migration steps, and common decisions.</p></details><details><summary>What is the fastest useful page to build around this keyword?</summary><p>A guide hub with install commands, migration notes, yolo mode safety context, command references, and troubleshooting pages.</p></details></section>
-      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/antigravity-cli-install/">Antigravity CLI install</a><a href="/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-yolo-mode/">Antigravity CLI yolo mode</a><a href="/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-2-0-ide/">Antigravity 2.0 IDE vs Antigravity CLI</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a><a href="/antigravity-cli-vs-gemini-cli/">Antigravity CLI vs Gemini CLI</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-wsl-oauth-fix/">Antigravity CLI WSL OAuth fix</a><a href="/antigravity-cli-rate-limit/">Antigravity CLI rate limit</a></div></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/antigravity-cli-install/">Antigravity CLI install</a><a href="/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-yolo-mode/">Antigravity CLI yolo mode</a><a href="/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-2-0-ide/">Antigravity 2.0 IDE vs Antigravity CLI</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a><a href="/antigravity-cli-vs-gemini-cli/">Antigravity CLI vs Gemini CLI</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-wsl-oauth-fix/">Antigravity CLI WSL OAuth fix</a><a href="/antigravity-cli-rate-limit/">Antigravity CLI rate limit</a><a href="/antigravity-cli-not-found/">Antigravity CLI command not found</a><a href="/antigravity-cli-update/">Antigravity CLI update</a><a href="/antigravity-cli-permissions/">Antigravity CLI permissions</a><a href="/antigravity-cli-oauth/">Antigravity CLI OAuth sign-in</a><a href="/antigravity-cli-remote-ssh/">Antigravity CLI remote SSH guide</a><a href="/antigravity-cli-plugins/">Antigravity CLI plugins</a><a href="/antigravity-cli-skills/">Antigravity CLI skills</a></div></section>
     </div>
     <footer class="site-footer">
       <div class="wrap footer-grid">
@@ -148,6 +153,14 @@
           <a href="/privacy/">Privacy</a><br>
           <a href="/contact/">Contact</a><br>
           <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
         </div>
       </div>
     </footer>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Update: Safe Reinstall Checklist</title>
+    <meta name="description" content="Update Antigravity CLI safely by checking official docs, preserving settings, testing auth, and validating commands after reinstall or upgrade.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-update/">
+    <meta property="og:title" content="Antigravity CLI Update: Safe Reinstall Checklist">
+    <meta property="og:description" content="Update Antigravity CLI safely by checking official docs, preserving settings, testing auth, and validating commands after reinstall or upgrade.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-update/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4ECJP5M2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y4ECJP5M2M');
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI update","item":"https://antigravitycliguide.com/antigravity-cli-update/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI update","headline":"Antigravity CLI update","description":"Update Antigravity CLI safely by checking official docs, preserving settings, testing auth, and validating commands after reinstall or upgrade.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/antigravity-cli-update/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there one universal update command?","acceptedAnswer":{"@type":"Answer","text":"Use the current official documentation. Launch-era install and update behavior can change."}},{"@type":"Question","name":"Should I delete config before updating?","acceptedAnswer":{"@type":"Answer","text":"No. Back it up first. Delete or move files only as a targeted troubleshooting step."}},{"@type":"Question","name":"What should I test after updating?","acceptedAnswer":{"@type":"Answer","text":"Launch the CLI, confirm auth, open help/config/permissions, and run a small prompt in a disposable branch."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli update</p>
+          <h1>Antigravity CLI update</h1>
+          <p class="lede">Use a careful update flow: preserve config, rerun the official installer, verify auth, and test one small task before returning to production work.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>When to update</h2>
+        <p>Update searches appear when a launch-era CLI changes quickly, an install command gets revised, or a user thinks a bug may already be fixed. The safe answer is not to chase unofficial packages. Check the official Antigravity CLI docs and product changelog first, then update using the supported installer path.</p>
+        <p>If your current CLI works, record the current behavior before updating. If your current CLI is broken, capture the exact error before reinstalling. Those two details make rollback and troubleshooting easier.</p>
+      </section>
+      <section class="section">
+        <h2>Safe update checklist</h2>
+        <ol>
+          <li>Back up user config files such as settings, keybindings, and MCP config.</li>
+          <li>Check the official docs for the current install or update command.</li>
+          <li>Run the installer in the same shell where you use the CLI.</li>
+          <li>Open a new terminal after the update completes.</li>
+          <li>Verify the command launches and the account is still signed in.</li>
+          <li>Run <code>?</code>, <code>/config</code>, and <code>/permissions</code> before starting a real task.</li>
+          <li>Test one read-only prompt and one small file edit in a disposable branch.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>What not to delete</h2>
+        <p>Do not delete your settings, keybindings, skills, plugins, hooks, or MCP files just because the CLI is being updated. Those files may be exactly what you need to debug a migration. If you suspect one config file is causing trouble, move it aside temporarily and document the change.</p>
+        <div class="warning"><strong>Safety note:</strong> update pages should never offer mirrored installers. Link to official Google sources and explain verification instead.</div>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Is there one universal update command?</summary><p>Use the current official documentation. Launch-era install and update behavior can change.</p></details><details><summary>Should I delete config before updating?</summary><p>No. Back it up first. Delete or move files only as a targeted troubleshooting step.</p></details><details><summary>What should I test after updating?</summary><p>Launch the CLI, confirm auth, open help/config/permissions, and run a small prompt in a disposable branch.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/antigravity-cli-install/">Antigravity CLI install</a><a href="/antigravity-cli-not-found/">Antigravity CLI command not found</a><a href="/antigravity-cli-config/">Antigravity CLI config</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

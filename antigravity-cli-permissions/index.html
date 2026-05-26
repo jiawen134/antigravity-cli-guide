@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Permissions: Review, Sandbox, and Yolo Safety</title>
+    <meta name="description" content="Understand Antigravity CLI permissions, review prompts, sandbox behavior, and safer alternatives to yolo-style autonomous command execution.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-permissions/">
+    <meta property="og:title" content="Antigravity CLI Permissions: Review, Sandbox, and Yolo Safety">
+    <meta property="og:description" content="Understand Antigravity CLI permissions, review prompts, sandbox behavior, and safer alternatives to yolo-style autonomous command execution.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-permissions/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4ECJP5M2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y4ECJP5M2M');
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI permissions","item":"https://antigravitycliguide.com/antigravity-cli-permissions/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI permissions","headline":"Antigravity CLI permissions","description":"Understand Antigravity CLI permissions, review prompts, sandbox behavior, and safer alternatives to yolo-style autonomous command execution.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/antigravity-cli-permissions/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are permissions the same as yolo mode?","acceptedAnswer":{"@type":"Answer","text":"Yolo-style searches are usually about reducing confirmations. Permissions are the actual control surface to review."}},{"@type":"Question","name":"Should I allow shell commands automatically?","acceptedAnswer":{"@type":"Answer","text":"Not at first. Require confirmation until you trust the project and understand the command category."}},{"@type":"Question","name":"How does this relate to MCP?","acceptedAnswer":{"@type":"Answer","text":"MCP tools can create extra action surfaces, so enable and test them one at a time."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli permissions</p>
+          <h1>Antigravity CLI permissions</h1>
+          <p class="lede">Permissions are the real control behind most yolo-mode questions. Review them before the CLI edits files or runs commands on your behalf.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Why permissions deserve their own page</h2>
+        <p>Many users search for yolo mode, but the better operational keyword is <strong>permissions</strong>. Permissions determine when the agent asks before reading files, writing files, running commands, or taking broader actions. A good Antigravity CLI setup starts conservative and loosens only after the user understands the project risk.</p>
+        <p>For a new site, this page supports both safety and search intent: it catches users who do not want a philosophy post, but need a concrete checklist before enabling higher autonomy.</p>
+      </section>
+      <section class="section">
+        <h2>Permission review table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Area</th><th>Risk</th><th>Safer default</th></tr></thead>
+            <tbody>
+              <tr><td>File reads</td><td>Private project files may be exposed to the active agent context.</td><td>Start in a small folder and avoid secrets.</td></tr>
+              <tr><td>File writes</td><td>Incorrect edits can touch many files.</td><td>Use a disposable branch and review diffs.</td></tr>
+              <tr><td>Shell commands</td><td>Commands can install packages, delete files, or call network services.</td><td>Require confirmation for command categories you do not trust yet.</td></tr>
+              <tr><td>Network access</td><td>Requests can reveal project metadata or hit paid services.</td><td>Keep credentials out of the workspace and review outbound actions.</td></tr>
+              <tr><td>MCP tools</td><td>Connected tools can touch issue trackers, databases, or cloud resources.</td><td>Enable one server at a time and test read-only actions first.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Practical workflow</h2>
+        <ol>
+          <li>Open <code>/permissions</code> before the first real task.</li>
+          <li>Ask the CLI to explain the current folder before changing anything.</li>
+          <li>Use Git status and Git diff after every file-write task.</li>
+          <li>Keep review prompts on for package installs, deployment commands, and cloud changes.</li>
+          <li>Only use broader autonomy in a branch you can discard.</li>
+        </ol>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Are permissions the same as yolo mode?</summary><p>Yolo-style searches are usually about reducing confirmations. Permissions are the actual control surface to review.</p></details><details><summary>Should I allow shell commands automatically?</summary><p>Not at first. Require confirmation until you trust the project and understand the command category.</p></details><details><summary>How does this relate to MCP?</summary><p>MCP tools can create extra action surfaces, so enable and test them one at a time.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/antigravity-cli-yolo-mode/">Antigravity CLI yolo mode</a><a href="/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-cli-config/">Antigravity CLI config</a><a href="/antigravity-cli-troubleshooting/">Antigravity CLI troubleshooting</a><a href="/antigravity-cli-remote-ssh/">Antigravity CLI remote SSH guide</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

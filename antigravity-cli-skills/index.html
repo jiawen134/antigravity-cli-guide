@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Skills: Migrate Agent Workflows</title>
+    <meta name="description" content="Migrate Antigravity CLI skills from Gemini CLI workflows by checking global skills, workspace skills, AGENTS.md, GEMINI.md, and test prompts.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-skills/">
+    <meta property="og:title" content="Antigravity CLI Skills: Migrate Agent Workflows">
+    <meta property="og:description" content="Migrate Antigravity CLI skills from Gemini CLI workflows by checking global skills, workspace skills, AGENTS.md, GEMINI.md, and test prompts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-skills/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4ECJP5M2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y4ECJP5M2M');
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI skills","item":"https://antigravitycliguide.com/antigravity-cli-skills/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI skills","headline":"Antigravity CLI skills","description":"Migrate Antigravity CLI skills from Gemini CLI workflows by checking global skills, workspace skills, AGENTS.md, GEMINI.md, and test prompts.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/antigravity-cli-skills/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do skills migrate automatically?","acceptedAnswer":{"@type":"Answer","text":"Do not assume that. Inventory, move, and test skills explicitly."}},{"@type":"Question","name":"Should every skill be global?","acceptedAnswer":{"@type":"Answer","text":"No. Project-specific skills should stay close to the workspace so they do not affect unrelated projects."}},{"@type":"Question","name":"How do I know a skill works?","acceptedAnswer":{"@type":"Answer","text":"Run it on a harmless read-only prompt, then test a small edit in a disposable branch."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli skills</p>
+          <h1>Antigravity CLI skills</h1>
+          <p class="lede">Skills are reusable agent workflows, so migration is not just a file copy. Confirm scope, project context, and behavior before relying on them.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>What users are really asking</h2>
+        <p>When users search for <strong>antigravity cli skills</strong>, they usually want to know whether their Gemini CLI custom workflows still work. A useful answer should explain skill scope, workspace instructions, and test prompts rather than only defining the word "skill".</p>
+        <p>Skills can encode powerful habits: how to debug, how to write docs, how to deploy, how to review code, or how to use internal tools. That makes them valuable, but also risky when moved into a new agent environment without testing.</p>
+      </section>
+      <section class="section">
+        <h2>Skills migration checklist</h2>
+        <ol>
+          <li>Inventory global skills and project-specific skills separately.</li>
+          <li>Keep project-specific skills inside the project when possible.</li>
+          <li>Check whether the project uses <code>AGENTS.md</code>, <code>GEMINI.md</code>, or both.</li>
+          <li>Run each skill on a harmless prompt before using it for edits.</li>
+          <li>Remove stale references to tools, paths, or commands that no longer exist.</li>
+          <li>Document which skills are safe for read-only tasks and which can trigger writes or external actions.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>Global vs workspace skills</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Skill type</th><th>Best for</th><th>Risk if misplaced</th></tr></thead>
+            <tbody>
+              <tr><td>Global skill</td><td>General workflows you use across many projects.</td><td>Project-specific assumptions leak everywhere.</td></tr>
+              <tr><td>Workspace skill</td><td>One repo, product, or deployment workflow.</td><td>The CLI may miss it if the path or context file is wrong.</td></tr>
+              <tr><td>Instruction file</td><td>Stable repo rules, test commands, and coding conventions.</td><td>Outdated instructions can steer the agent into wrong commands.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Do skills migrate automatically?</summary><p>Do not assume that. Inventory, move, and test skills explicitly.</p></details><details><summary>Should every skill be global?</summary><p>No. Project-specific skills should stay close to the workspace so they do not affect unrelated projects.</p></details><details><summary>How do I know a skill works?</summary><p>Run it on a harmless read-only prompt, then test a small edit in a disposable branch.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-plugins/">Antigravity CLI plugins</a><a href="/antigravity-cli-commands/">Antigravity CLI commands</a><a href="/antigravity-cli-config/">Antigravity CLI config</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

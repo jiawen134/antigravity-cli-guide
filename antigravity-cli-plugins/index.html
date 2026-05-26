@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Antigravity CLI Plugins: Migrate Extensions Safely</title>
+    <meta name="description" content="Understand Antigravity CLI plugins, how they relate to Gemini CLI extensions, and how to test plugin behavior safely after migration.">
+    <link rel="canonical" href="https://antigravitycliguide.com/antigravity-cli-plugins/">
+    <meta property="og:title" content="Antigravity CLI Plugins: Migrate Extensions Safely">
+    <meta property="og:description" content="Understand Antigravity CLI plugins, how they relate to Gemini CLI extensions, and how to test plugin behavior safely after migration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antigravitycliguide.com/antigravity-cli-plugins/">
+    <meta property="og:image" content="https://antigravitycliguide.com/assets/antigravity-cli-workflow.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y4ECJP5M2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y4ECJP5M2M');
+    </script>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Antigravity CLI Guide","item":"https://antigravitycliguide.com/"},{"@type":"ListItem","position":2,"name":"Antigravity CLI plugins","item":"https://antigravitycliguide.com/antigravity-cli-plugins/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"Antigravity CLI plugins","headline":"Antigravity CLI plugins","description":"Understand Antigravity CLI plugins, how they relate to Gemini CLI extensions, and how to test plugin behavior safely after migration.","datePublished":"2026-05-27","dateModified":"2026-05-27","url":"https://antigravitycliguide.com/antigravity-cli-plugins/","inLanguage":"en","isAccessibleForFree":true}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are Gemini CLI extensions the same as Antigravity plugins?","acceptedAnswer":{"@type":"Answer","text":"They are related in the migration story, but do not assume every extension maps perfectly. Test plugin behavior."}},{"@type":"Question","name":"Should I enable all plugins at once?","acceptedAnswer":{"@type":"Answer","text":"No. Enable one at a time and test visibility, permissions, and side effects."}},{"@type":"Question","name":"How are plugins different from MCP?","acceptedAnswer":{"@type":"Answer","text":"MCP is a protocol connection to tools and data. Plugins are packaged capabilities inside the Antigravity ecosystem."}}]}</script>
+  </head>
+  <body>
+    
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/"><span class="brand-mark">agy</span><span>Antigravity CLI Guide</span></a>
+        <div class="nav-links">
+          <a href="/antigravity-cli-install/">Install</a>
+          <a href="/gemini-cli-to-antigravity-cli/">Migration</a>
+          <a href="/antigravity-cli-mcp/">MCP</a>
+          <a href="/antigravity-cli-permissions/">Permissions</a>
+          <a href="/antigravity-cli-vs-gemini-cli/">Compare</a>
+          <a href="/antigravity-cli-troubleshooting/">Troubleshooting</a>
+        </div>
+      </nav>
+    </header>
+  
+    
+    <main class="wrap">
+      <section class="content">
+        <div>
+          <p class="eyebrow">Support keyword: antigravity cli plugins</p>
+          <h1>Antigravity CLI plugins</h1>
+          <p class="lede">Plugins are where many Gemini CLI extension questions land. Migrate carefully, test one plugin at a time, and review what each plugin can do.</p>
+          <p class="small">Updated on 2026-05-27. Independent guide. Use official Google links for downloads and account actions.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://antigravity.google/download" rel="nofollow">Official download</a>
+            <a class="button secondary" href="https://antigravity.google/docs/cli-overview" rel="nofollow">Official CLI docs</a>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <div class="wrap">
+      
+      <section class="section">
+        <h2>Why plugins matter in the migration</h2>
+        <p>Google's transition messaging says Gemini CLI Extensions are part of the migration story, with Antigravity plugins becoming the relevant destination. That makes <strong>antigravity cli plugins</strong> a useful long-tail page: users are not just asking where a menu is, they are asking whether custom workflow pieces still exist.</p>
+        <p>Do not migrate every extension or plugin at once. Plugins can add commands, tools, context, or integrations. Each extra capability changes what the agent can see and do.</p>
+      </section>
+      <section class="section">
+        <h2>Plugin migration checklist</h2>
+        <ol>
+          <li>List the Gemini CLI extensions or Antigravity plugins you actually use.</li>
+          <li>Mark which ones touch local files, network APIs, issue trackers, or cloud resources.</li>
+          <li>Install or enable one plugin first.</li>
+          <li>Run a harmless read-only task that proves the plugin is visible.</li>
+          <li>Check permissions before allowing writes or external actions.</li>
+          <li>Document any missing extension behavior before removing the old setup.</li>
+        </ol>
+      </section>
+      <section class="section">
+        <h2>Plugin vs MCP vs skills</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Surface</th><th>Typical role</th><th>Migration caution</th></tr></thead>
+            <tbody>
+              <tr><td>Plugins</td><td>Packaged capabilities, commands, or integrations.</td><td>Check what the plugin can access before enabling broadly.</td></tr>
+              <tr><td>MCP servers</td><td>External tools and data through a protocol connection.</td><td>Validate config, auth, and token storage separately.</td></tr>
+              <tr><td>Skills</td><td>Reusable instructions and workflows for the agent.</td><td>Keep workspace-specific skills close to the project.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+  <p class="small">Sources: official Google Antigravity product pages, Google Antigravity CLI documentation, and the Google Developers transition announcement. This site is an independent guide and is not affiliated with Google.</p>
+
+      </section>
+    
+      <section class="section faq"><h2>FAQ</h2><details><summary>Are Gemini CLI extensions the same as Antigravity plugins?</summary><p>They are related in the migration story, but do not assume every extension maps perfectly. Test plugin behavior.</p></details><details><summary>Should I enable all plugins at once?</summary><p>No. Enable one at a time and test visibility, permissions, and side effects.</p></details><details><summary>How are plugins different from MCP?</summary><p>MCP is a protocol connection to tools and data. Plugins are packaged capabilities inside the Antigravity ecosystem.</p></details></section>
+      <section class="section"><h2>Related Antigravity CLI pages</h2><div class="related-list"><a href="/">Antigravity CLI guide</a><a href="/gemini-cli-to-antigravity-cli/">Gemini CLI to Antigravity CLI migration</a><a href="/antigravity-cli-skills/">Antigravity CLI skills</a><a href="/antigravity-cli-mcp/">Antigravity CLI MCP setup</a><a href="/antigravity-cli-permissions/">Antigravity CLI permissions</a></div></section>
+    </div>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <strong>Antigravity CLI Guide</strong>
+          <p class="small">Independent Antigravity CLI guide. Not affiliated with Google. Always use official Google pages for downloads, authentication, and product support.</p>
+        </div>
+        <div>
+          <a href="/about/">About</a><br>
+          <a href="/privacy/">Privacy</a><br>
+          <a href="/contact/">Contact</a><br>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+        <div>
+          <strong>Priority guides</strong><br>
+          <a href="/antigravity-cli-not-found/">Command not found</a><br>
+          <a href="/antigravity-cli-update/">Update CLI</a><br>
+          <a href="/antigravity-cli-oauth/">OAuth sign-in</a><br>
+          <a href="/antigravity-cli-remote-ssh/">Remote SSH</a><br>
+          <a href="/antigravity-cli-skills/">Skills migration</a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

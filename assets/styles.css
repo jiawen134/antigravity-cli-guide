@@ -129,6 +129,15 @@ h1 {
   font-size: 20px;
 }
 
+.trust-note {
+  max-width: 680px;
+  padding: 10px 12px;
+  border: 1px solid #b7d6bd;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #14532d;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -184,49 +193,24 @@ h1 {
   align-items: stretch;
 }
 
-.radio-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+.check-list {
+  padding-left: 20px;
 }
 
-.radio-grid label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px;
-  border: 1px solid var(--line);
+.check-list.compact li {
+  margin: 6px 0;
+}
+
+.source-box {
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #b7d6bd;
   border-radius: 8px;
-  background: var(--wash);
-  font-weight: 650;
+  background: #f0fdf4;
 }
 
-.command-box {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  padding: 14px;
-  border-radius: 8px;
-  background: var(--terminal);
-  color: #e8edf5;
-}
-
-.command-box pre {
-  margin: 0;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.copy-button {
-  min-width: 64px;
-  min-height: 36px;
-  border: 1px solid #394556;
-  border-radius: 8px;
-  background: var(--terminal-soft);
-  color: #e8edf5;
-  font-weight: 700;
-  cursor: pointer;
+.source-box p {
+  color: #234238;
 }
 
 .band {
